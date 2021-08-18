@@ -21,7 +21,7 @@ module.exports = app => {
   // Delete a Config with id
   router.delete("/:id", configs.delete);
 
-  // Create a new Config
+  // Delete all Configs
   router.delete("/", configs.deleteAll);
 
   app.use('/api/configs', router);
