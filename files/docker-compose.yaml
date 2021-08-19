@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  bluechip:
+    build:
+      context: .
+      dockerfile: blueChip-Dockerfile
+    image: bluechip
+    container_name: bluechip
+    restart: unless-stopped
+    env_file: js/blue-chip/.env
+    ports:
+      - "8080:80"
+    working_dir: /usr/src/app
+  bluechip-api:
+    build:
+      context: .
+      dockerfile: blueChip-api-Dockerfile
+    image: bluechip-api
+    container_name: bluechip-api
+    restart: unless-stopped
+    env_file: js/blue-chip-api/.env
+    ports:
+      - "8081:8081"
+    working_dir: /usr/src/app
