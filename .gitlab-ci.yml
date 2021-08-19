@@ -22,7 +22,6 @@ build-job:       # This job runs in the build stage, which runs first.
   stage: build
   script:
     - echo "Compiling the code..."
-    - sudo apt install python3-pip
     - pip3 install docker-compose
     - cd files
     - docker-compose build
