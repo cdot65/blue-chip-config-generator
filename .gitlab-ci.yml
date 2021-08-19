@@ -6,5 +6,8 @@ services:
 build:
   stage: build
   script:
-    - docker build -t test -f files/blueChip-Dockerfile .
-    - docker build -t test -f files/blueChip-api-Dockerfile .
+    - cd files
+    - echo "DOCKER BUILD STARTING NOW"
+    - docker build -t test -f ./blueChip-Dockerfile .
+    - docker build -t test -f ./blueChip-api-Dockerfile .
+    - echo "DOCKER BUILD COMPLETED"
