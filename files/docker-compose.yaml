@@ -4,16 +4,22 @@ services:
   bluechip:
     build:
       context: .
-      dockerfile: docker/blue-chip/Dockerfile
+      dockerfile: blueChip-Dockerfile
     image: bluechip
-    container_name: bluechip-ui
+    container_name: bluechip
     restart: unless-stopped
-    env_file: docker/blue-chip/.env
+    env_file: js/blue-chip/.env
     ports:
       - "8080:80"
-    volumes:
-      - type: bind
-        source: js/blue-chip
-        target: /usr/src/app
     working_dir: /usr/src/app
-    command: bash -c "npm install && npm start"
+  bluechip-api:
+    build:
+      context: .
+      dockerfile: blueChip-api-Dockerfile
+    image: bluechip-api
+    container_name: bluechip-api
+    restart: unless-stopped
+    env_file: js/blue-chip-api/.env
+    ports:
+      - "8081:8081"
+    working_dir: /usr/src/app

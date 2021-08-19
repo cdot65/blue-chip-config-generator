@@ -2,8 +2,15 @@ SHELL := /usr/bin/env bash
 .DEFAULT_GOAL := help
 .PHONY: help build run shell stop
 
-DOCKER_IMG = slack_netbox
-DOCKER_TAG = 0.0.5
+DOCKER_IMG_BLUECHIP = bluechip
+DOCKER_TAG_BLUECHIP = 0.0.1
+
+DOCKER_IMG_BLUECHIP_API = bluechip-api
+DOCKER_TAG_BLUECHIP_API = 0.0.1
+
+DOCKER_IMG_BLUECHIP_DB = bluechip-db
+DOCKER_TAG_BLUECHIP_DB = 0.0.1
+
 CONTAINER_NAME = slack_netbox
 
 help:
