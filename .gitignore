@@ -44,7 +44,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-
-
-
-blue-chip-api/node_modules
+files/js/blue-chip/node_modules
+files/js/blue-chip-api/node_modules
