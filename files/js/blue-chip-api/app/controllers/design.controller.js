@@ -14,6 +14,8 @@ exports.create = (req, res) => {
     title: req.body.title,
     description: req.body.description,
     name: req.body.name,
+    slug: req.body.slug,
+    order: req.body.order,
     avatar: req.body.avatar,
     published: req.body.published ? req.body.published : false
   });
@@ -39,7 +41,7 @@ exports.findAll = (req, res) => {
 
   Design.find(condition)
     .then(data => {
-      res.send(data);
+      res.send(data.sort((a,b) => a.order - b.order));
     })
     .catch(err => {
       res.status(500).send({
@@ -134,7 +136,7 @@ exports.deleteAll = (req, res) => {
 exports.findAllPublished = (req, res) => {
   Design.find({ published: true })
     .then(data => {
-      res.send(data);
+      res.send(data.sort((a,b) => a.order - b.order));
     })
     .catch(err => {
       res.status(500).send({
