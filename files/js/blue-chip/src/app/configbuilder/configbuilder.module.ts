@@ -12,6 +12,7 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { DesignService } from './services/design.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ConfigsComponent } from './components/configs/configs.component';
 
 const routes: Routes = [
   { path: '', component: ConfigbuilderAppComponent,
@@ -29,6 +30,7 @@ const routes: Routes = [
     ToolbarComponent,
     MainContentComponent,
     SidenavComponent,
+    ConfigsComponent,
   ],
   imports: [
     CommonModule,
