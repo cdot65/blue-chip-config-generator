@@ -22,6 +22,10 @@ export class DesignService {
   get designs(): Observable<Design[]> {
     return this._designs.asObservable();
   }
+  
+  designByName(slug: string) {
+    return this.dataStore.designs.find(x => x.slug == slug);
+  }
 
   loadAll() {
     const designsUrl = 'http://localhost:8081/api/designs/published'

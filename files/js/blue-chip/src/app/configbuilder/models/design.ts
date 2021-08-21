@@ -5,6 +5,8 @@ export class Design {
   description: string;
   id: number;
   name: string;
+  order: number;
+  slug: string;
   title: string;
 
   configs: Config[] = [];

@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 const routes: Routes = [
   { path: '', component: ConfigbuilderAppComponent,
     children: [
+      {path: ':slug', component: MainContentComponent },
       {path: '', component: MainContentComponent }
     ]},
   { path: '**', redirectTo: ''}
