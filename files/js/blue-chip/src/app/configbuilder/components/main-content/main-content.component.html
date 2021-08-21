@@ -1,3 +1,43 @@
-<mat-card>
-  <h1>Main content</h1>
-</mat-card>
+<div *ngIf="!design">
+  <mat-card>
+    <mat-card-header>
+      <mat-icon mat-card-avatar svgIcon="svg-10"></mat-icon>
+      <mat-card-title>
+        <h2>Blue Chip</h2>
+      </mat-card-title>
+      <mat-card-subtitle>A configuration builder for JunOS devices</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-tab-group>
+      <mat-tab label="Details">
+        <p>
+          Description wuz here
+        </p>
+      </mat-tab>
+      <mat-tab label="Configs"></mat-tab>
+      <mat-tab label="About"></mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="design">
+  <mat-card>
+    <mat-card-header>
+      <mat-icon mat-card-avatar svgIcon="{{ design.avatar }}"></mat-icon>
+      <mat-card-title>
+        <h2>{{ design.name }}</h2>
+      </mat-card-title>
+      <mat-card-subtitle>Data Center</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-tab-group>
+      <mat-tab label="Description">
+        <p>
+          {{ design.description }}
+        </p>
+      </mat-tab>
+      <!-- <mat-tab label="Notes"></mat-tab> -->
+    </mat-tab-group>
+  </mat-card-content>
+  </mat-card>
+</div>

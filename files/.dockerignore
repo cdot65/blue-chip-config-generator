@@ -1,2 +1,3 @@
-node_modules
+blue-chip/node_modules/**/*
+blue-chip-api/node_modules/**/*
 npm-debug.log

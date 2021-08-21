@@ -3,15 +3,19 @@
   <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10" 
                [opened]="!isScreenSmall"
                [mode]="isScreenSmall ? 'over' : 'side'">
-    <mat-toolbar color="primary">
-      Blue Chip
-    </mat-toolbar>
-    <mat-list>
-      <mat-list-item>Home</mat-list-item>
-      <mat-list-item>CRB</mat-list-item>
-      <mat-list-item>ERB</mat-list-item>
-      <mat-list-item>IPsec VPN</mat-list-item>
-    </mat-list>
+    <mat-toolbar color="primary">Blue Chip</mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item>
+        <a matLine [routerLink]="['/configbuilder']">
+          <mat-icon aria-hidden="false">home</mat-icon> Home
+        </a>
+      </mat-list-item>
+      <mat-list-item *ngFor="let design of designs | async">
+        <a matLine [routerLink]="['/configbuilder', design.slug]">
+          <mat-icon svgIcon="{{ design.avatar }}"></mat-icon> {{ design.name }}
+        </a>
+      </mat-list-item>
+    </mat-nav-list>
   </mat-sidenav>
 
   <div class="app-sidenav-content">
